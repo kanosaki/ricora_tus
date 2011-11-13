@@ -1,0 +1,13 @@
+<ul id="menu">
+  <% sitemenu.each do |mitem| %>
+    <li><a href="<%= mitem["url"] %>"><%= mitem["name"] %></a></li>
+    <% if mitem["sub"] && mitem["sub"].length > 0 %>
+      <ul>
+        <% for sitem in mitem["sub"] %>
+          <li><a href="<%= sitem["url"] %>"><%= sitem["name"] %></a></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</ul>
+

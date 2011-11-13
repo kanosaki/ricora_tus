@@ -1,0 +1,20 @@
+
+
+@import url("main.css");
+
+
+body { 
+	background: #f4f4f4 url(../images/bgtile-thin.jpg) repeat-x; 
+}
+
+#bg { 
+	background: url(../images/bg-thin.jpg) no-repeat center top; 
+}
+
+#main {
+	margin: 20px 0 30px;
+}
+
+#side {
+	margin: 20px 0 30px;
+}

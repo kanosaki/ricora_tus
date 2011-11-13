@@ -1,0 +1,22 @@
+- name  : Home
+  url   : /index.html
+  tip   : Ricora Language Team top page
+
+- name  : About
+  url   : /about.html
+  tip   : About this circle and site
+  sub   :
+    - name  : Circle
+      url   : /about.html
+      tip   : About this circle 
+    - name  : Site
+      url   : /webproject.html
+      tip   : About this site
+
+- name  : FAQ
+  url   : /faq.html
+  tip   : Frequency asked questions
+
+- name  : Contact us
+  url   : /contact.html
+  tip   : Why don't you join us!

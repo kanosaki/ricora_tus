@@ -1,0 +1,21 @@
+<h4>Latest News</h4>
+
+<% sitenews.each do |n| %>
+    <div class="news">
+        <div class="news-header">
+            <div class="news-title">
+              <h5><%= n["title"] %></h5>
+            </div>
+            <div class="news-timestamp">
+              <%= n["timestamp"] %>
+            </div>
+        </div>
+        <div class="news-body">
+          <p><%= n["body"] %></p>
+        </div>
+    </div>
+<% end %>
+<div id="quote">
+    <h4>Request a Free Quote</h4>
+    <p>Phasellus diam sapien, fermentum a eleifend non, luctus non augue.</p>
+</div>

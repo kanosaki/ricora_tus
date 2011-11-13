@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>Ricora | Programming Team - <%= @item[:title] %></title>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="<%= relative_path_to("/js/menu.js") %>"></script>
+        <script type="text/javascript" src="<%= relative_path_to("/js/slideshow.js")%>"></script>
+        <script type="text/javascript" src="<%= relative_path_to("/js/fancyzoom.min.js")%>"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                $('div.photo a').fancyZoom({scaleImg: true, closeOnClick: true});
+            });
+        </script>
+        <link rel="stylesheet" href="<%= relative_path_to("/css/main.css") %>" type="text/css" />
+        <link rel="stylesheet" href="<%= relative_path_to("/css/top.css") %>" type="text/css" />
+    </head>
+    <body>
+        <div id="bg">
+            <div class="wrap">
+
+                <!-- logo -->
+                <h1 id="logo">
+                  <a href="<%= relative_path_to("/index.html")%>"><img src="<%= relative_path_to("/images/logo.png")%>" alt="Ricora logo"></img></a>
+                </h1>
+                <!-- /logo -->
+
+                <!-- menu -->
+                <div id="mainmenu">
+                  <%= render 'menu' %>
+                </div>
+                <!-- /menu -->
+
+                <!-- pitch -->
+                <div id="pitch">
+                  <%= render 'slideshow' %>
+                </div>
+
+                <!-- main -->
+                <div id="main">
+                    <div id="page">                    
+                      <%= yield %>
+                    </div>
+                </div>
+                <!-- /main -->
+
+                <!-- side -->
+                <div id="side">
+                  <%= render 'side' %>
+                </div>
+                <!-- /side -->
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+              <%= render 'footer' %>
+            </div>
+            <!-- /footer -->
+        </div>
+    </body>
+    <!-- vim: ft=eruby -->
+</html>
+
