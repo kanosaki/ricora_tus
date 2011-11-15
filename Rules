@@ -25,6 +25,10 @@ end
 compile '/js/*/' do  
 end
 
+compile '/blog/' do 
+  filter :erb
+end
+
 compile '/stylesheet/' do
   # don’t filter or layout
 end
@@ -45,6 +49,10 @@ end
 
 route '/' do
   '/index.html'
+end
+
+route '/blog/feed/' do 
+  '/blog.xml'
 end
 
 route '*' do

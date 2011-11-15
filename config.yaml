@@ -2,6 +2,10 @@ deploy:
   default:
     dst: "ricora@nodat000.ed.noda.tus.ac.jp:~/www/lang"
 
+base_url: "http://www.ed.noda.tus.ac.jp/ricora/lang"
+blog:
+  article_skelton: "sitedata/blog_entry.html"
+  blog_dir: "content/blog/"
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file
 # will be considered as binary.

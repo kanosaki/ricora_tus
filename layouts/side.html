@@ -1,21 +1,28 @@
-<h4>Latest News</h4>
-
-<% sitenews.each do |n| %>
-    <div class="news">
-        <div class="news-header">
-            <div class="news-title">
-              <h5><%= n["title"] %></h5>
-            </div>
-            <div class="news-timestamp">
-              <%= n["timestamp"] %>
-            </div>
-        </div>
-        <div class="news-body">
-          <p><%= n["body"] %></p>
-        </div>
+<h4>Latest Updates</h4>
+<div class="updates">
+  <% sorted_articles[0, 10].each do |article| %>
+    <div class="updates-article">
+      <%= link_to(article[:title], article.path) %>
+      <span class="meta">(<%= article[:created_at] %>)</span>
     </div>
-<% end %>
-<div id="quote">
-    <h4>Request a Free Quote</h4>
-    <p>Phasellus diam sapien, fermentum a eleifend non, luctus non augue.</p>
+  <% end %>
 </div>
+<div id="quote">
+  <h4>Notifications</h4>
+  <% sitenews.each do |n| %>
+    <div class="news">
+      <div class="news-header">
+        <div class="news-title">
+          <h5><%= n["title"] %></h5>
+        </div>
+        <div class="news-timestamp">
+          <%= n["timestamp"] %>
+        </div>
+      </div>
+      <div class="news-body">
+        <p><%= n["body"] %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<!-- vim: ft=eruby -->
