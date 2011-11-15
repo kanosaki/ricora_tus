@@ -13,8 +13,12 @@
                 $('div.photo a').fancyZoom({scaleImg: true, closeOnClick: true});
             });
         </script>
-        <link rel="stylesheet" href="<%= relative_path_to("/css/main.css") %>" type="text/css" />
         <link rel="stylesheet" href="<%= relative_path_to("/css/body.css") %>" type="text/css" />
+        <% if @item[:css] %>
+          <% @item[:css].each do |cssname| %>
+            <link rel="stylesheet" href="<%= relative_path_to("/css/#{cssname}.css") %>" type="text/css" />
+          <% end %>
+        <% end %>
     </head>
     <body>
         <div id="bg">
