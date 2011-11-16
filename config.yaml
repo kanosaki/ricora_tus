@@ -4,7 +4,8 @@ deploy:
 
 base_url: "http://www.ed.noda.tus.ac.jp/ricora/lang"
 blog:
-  article_skelton: "sitedata/blog_entry.html"
+  skelton_dir: "sitedata/blog_template"
+  default_skelton_name: "default.erb"
   blog_dir: "content/blog/"
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file

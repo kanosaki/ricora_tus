@@ -1,7 +1,10 @@
 usage       'deplpy'
 aliases     :ca
 summary     'Create blog page at /content/blog/'
-description 'Homuhomu'
+description <<-EOS
+EOS
+
+required :t, :template, "Specity template name in template dir"
 
 flag  :h, :help, 'Show help for this command' do |value, cmd|
   puts "Some help"
@@ -15,7 +18,6 @@ end
 
 PROJECT_ROOT = File.absolute_path(File.join(File.dirname(__FILE__), "../"))
 require 'erubis'
-require 'pp'
 
 SKELTON = <<-EOS
 ---
@@ -32,7 +34,6 @@ EOS
 class BlogCreator < Nanoc3::CLI::Command
   def run
     puts "Creating new blog post.."
-    skelton = article_skelton
     write_skelton(skelton)
     puts "Complete."
     puts "Blog post created at #{dst_path}"
@@ -44,8 +45,24 @@ class BlogCreator < Nanoc3::CLI::Command
     end
   end
 
-  def article_skelton
-    sprintf(SKELTON, title, article_timestamp)
+  def skelton
+    engine = Erubis::Eruby.new(template)
+    engine.evaluate(context)
+  end
+
+  def context
+    @context ||= Erubis::Context.new(
+      :title => title,
+      :timestamp => article_timestamp)
+  end
+
+  def template
+    File.read(template_path)
+  end
+
+  def template_path
+    t_name = options[:template] || config[:default_skelton_name] || "default.erb"
+    File.join(config[:skelton_dir], t_name)
   end
 
   def dst_path
@@ -62,10 +79,6 @@ class BlogCreator < Nanoc3::CLI::Command
   
   def title_escaped
     title.gsub(" ", "-")
-  end
-
-  def template_path
-    config[:article_skelton] 
   end
 
   def timestamp
@@ -95,7 +108,6 @@ class BlogCreator < Nanoc3::CLI::Command
     end
     args.join(" ")
   end
-
 end
 
 
