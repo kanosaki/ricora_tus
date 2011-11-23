@@ -1,3 +1,4 @@
+
 usage       'deplpy'
 aliases     :ca
 summary     'Create blog page at /content/blog/'
@@ -11,25 +12,14 @@ flag  :h, :help, 'Show help for this command' do |value, cmd|
   exit 0
 end
 
-
 run do |opts, args, cmd|
   BlogCreator.call(opts, args, cmd)
 end
 
+
 PROJECT_ROOT = File.absolute_path(File.join(File.dirname(__FILE__), "../"))
+
 require 'erubis'
-
-SKELTON = <<-EOS
----
-title: %s
-created_at: %s
-kind: article
-tags: [enter, tags, here]
-publish: true
----
-
-Write article body here.
-EOS
 
 class BlogCreator < Nanoc3::CLI::Command
   def run
@@ -70,14 +60,14 @@ class BlogCreator < Nanoc3::CLI::Command
   end
   
   def filename
-    "#{file_timeprefix}_#{title_escaped}"
+    "#{file_timeprefix}_#{escaped_title}"
   end
 
   def title
     extract_blogtitle(arguments)
   end
   
-  def title_escaped
+  def escaped_title
     title.gsub(" ", "-")
   end
 
@@ -109,6 +99,4 @@ class BlogCreator < Nanoc3::CLI::Command
     args.join(" ")
   end
 end
-
-
 
