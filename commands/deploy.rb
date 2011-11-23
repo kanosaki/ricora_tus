@@ -1,4 +1,3 @@
-require 'pp'
 usage       'deplpy'
 aliases     :dep
 summary     'Compile and Deploy pages to remote server'
@@ -27,7 +26,7 @@ class RsyncDeploy < Nanoc3::CLI::Command
   end
 
   def exec_deploy
-    system(create_deploy_command)
+    system(deploy_command)
   end
   
   def permission_modify
@@ -35,7 +34,7 @@ class RsyncDeploy < Nanoc3::CLI::Command
     system("find #{output_root} -type f -exec chmod og+r {} \\;")
   end
 
-  def create_deploy_command
+  def deploy_command
     "rsync -avz -e ssh \"./#{output_root}/\" \"#{target}\""
   end
 
