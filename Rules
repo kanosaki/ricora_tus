@@ -18,6 +18,12 @@ compile '/' do
   layout 'top'
 end
 
+compile '/notice/' do
+  filter :erb
+  filter :kramdown
+  layout 'default'
+end
+
 compile '/images/*/' do  
 end
 

@@ -12,3 +12,13 @@ end
 def sitenews
   YAML.load_file(SITE_NEWS_FILEPATH)
 end
+
+def next_meeting
+  conf = @config[:next_meeting]
+  if conf == "default"
+    (Time.now + ((8 - Time.now.wday)%7)*60*60*24).strftime "%Y/%m/%d (%a)" + 
+      " @ K306" # Next monday and default location
+  else
+    conf
+  end
+end

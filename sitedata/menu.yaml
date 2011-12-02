@@ -16,6 +16,9 @@
 - name  : FAQ
   url   : faq.html
   tip   : Frequency asked questions
+- name  : Notice
+  url   : notice.html
+  tip   : Notice
 
 - name  : Contact us
   url   : contact.html
