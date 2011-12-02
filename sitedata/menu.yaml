@@ -7,10 +7,10 @@
   tip   : About this circle and site
   sub   :
     - name  : Circle
-      url   : /about.html
+      url   : about.html
       tip   : About this circle 
     - name  : Site
-      url   : /webproject.html
+      url   : webproject.html
       tip   : About this site
 
 - name  : FAQ
