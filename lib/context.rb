@@ -22,3 +22,9 @@ def next_meeting
     conf
   end
 end
+
+def vcs_logs
+  format = "%s ||| by %an, %ad" 
+  cmd = "git log -n5 --date=short --pretty=format:\"#{format}\""
+  `#{cmd}`.split("\n").map{|s| s.split("|||") }
+end
