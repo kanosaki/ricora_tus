@@ -18,12 +18,6 @@ compile '/' do
   layout 'top'
 end
 
-compile '/notice/' do
-  filter :erb
-  filter :kramdown
-  layout 'default'
-end
-
 compile '/images/*/' do  
 end
 
@@ -45,8 +39,8 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    filter :kramdown
     filter :erb
+    filter :kramdown
     layout 'default'
   end
 end
