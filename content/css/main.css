@@ -43,7 +43,7 @@ body {
 
 /* typography and links */
 a { 
-	text-decoration: none;
+/*	text-decoration: none; */
 	color: #333;
 }
 
@@ -124,6 +124,9 @@ h5 {
 #mainmenu { 
 	float: right; 
 	padding: 39px 0 0; 
+}
+#mainmenu a {
+    text-decoration: none;
 }
 #menu ul { 
 	float: right; 
@@ -469,6 +472,7 @@ input.submit {
 	color: #999; 
 	margin: 0 5px 0 0; 
 	padding: 6px 10px;
+    text-decoration: none;
 	background: url(../images/dot.png) no-repeat left center; 
 	border: 1px solid transparent;
 }
