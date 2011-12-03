@@ -2,6 +2,10 @@
   url   : index.html
   tip   : Ricora Language Team top page
 
+- name  : Sitemap
+  url   : sitemap.html
+  tip   : A bird's-eye view of this site.
+
 - name  : About
   url   : about.html
   tip   : About this circle and site
@@ -16,6 +20,7 @@
 - name  : FAQ
   url   : faq.html
   tip   : Frequency asked questions
+
 - name  : Notice
   url   : notice.html
   tip   : Notice
