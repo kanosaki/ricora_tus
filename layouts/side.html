@@ -1,18 +1,9 @@
 <h4>Articles</h4>
-<div class="updates">
+<div class="articles">
   <% sorted_articles[0, 10].each do |article| %>
-    <div class="updates-article">
+    <div class="articles-entry">
       <%= link_to(article[:title], article.path) %>
       <span class="meta">(<%= article[:created_at] %>)</span>
-    </div>
-  <% end %>
-</div>
-<h4>Recent Updates</h4>
-<div class="updates">
-  <% vcs_logs.each do |body, meta| %>
-    <div class="updates-article">
-      <div><%= body %></div>
-      <span class="meta"><%= meta %></span>
     </div>
   <% end %>
 </div>
@@ -22,15 +13,25 @@
     <div class="news">
       <div class="news-header">
         <div class="news-title">
-          <h5><%= n["title"] %></h5>
-        </div>
-        <div class="news-timestamp">
-          <%= n["timestamp"] %>
+          <h5><%= n["title"] %>
+            <span class="news-timestamp">
+              <%= n["timestamp"].strftime("%Y-%m-%d") %>
+            </span>
+          </h5>
         </div>
       </div>
       <div class="news-body">
         <p><%= n["body"] %></p>
       </div>
+    </div>
+  <% end %>
+</div>
+<h4>Recent Updates</h4>
+<div class="updates">
+  <% vcs_logs.each do |body, meta| %>
+    <div class="updates-entry">
+      <div><%= body %></div>
+      <span class="updates-meta"><%= meta %></span>
     </div>
   <% end %>
 </div>

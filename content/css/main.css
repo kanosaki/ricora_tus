@@ -389,7 +389,7 @@ h5 {
 	font-size: .9em;
 }
 #side h4 {
-	margin: 0 0 23px;
+	margin: 0 0 13px;
 	font-size: 1.3em;
 }
 
@@ -400,10 +400,16 @@ h5 {
 }
 .news h5 { 
 	margin: 0 0 5px; 
-	font-size: 1.2em;
+	font-size: 1.1em;
+    color: #555;
 }
 .news p {
 	margin: 0 0 11px;
+}
+
+.news-timestamp {
+  color: #bbb;
+  padding-left: 10px;
 }
 
 #quote {
@@ -417,6 +423,14 @@ h5 {
 	list-style: none; 
 	padding: 10px 4px; 
 	border-bottom: 1px solid #ddd; 
+}
+
+.updates-entry {
+  padding-bottom: 10px;
+}
+
+.updates-meta {
+  padding-left: 1em;
 }
 
 
@@ -492,3 +506,4 @@ input.submit {
 	color: #999; 
     font-size: 0.8em;
 }
+
