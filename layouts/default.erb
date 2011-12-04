@@ -2,25 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-        <meta name="description" content="A Programmer's community" />
-        <meta name="keywords" content="tus,ricora,programming,college,circle,computer" />
-        <title><%= @item[:title] %> - Ricora | Programming Team</title>
-        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.1.min.js"></script>
-        <script type="text/javascript" src="<%= relative_path_to("/js/menu.js") %>"></script>
-        <script type="text/javascript" src="<%= relative_path_to("/js/slideshow.js")%>"></script>
-        <script type="text/javascript" src="<%= relative_path_to("/js/fancyzoom.min.js")%>"></script>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function() {
-                $('div.photo a').fancyZoom({scaleImg: true, closeOnClick: true});
-            });
-        </script>
-        <link rel="stylesheet" href="<%= relative_path_to("/css/body.css") %>" type="text/css" />
-        <% if @item[:css] %>
-          <% @item[:css].each do |cssname| %>
-            <link rel="stylesheet" href="<%= relative_path_to("/css/#{cssname}.css") %>" type="text/css" />
-          <% end %>
-        <% end %>
+        <%= render "header" %>
     </head>
     <body>
         <div id="bg">
