@@ -20,7 +20,7 @@ def next_meeting
     delta_raw = ((8 - n.wday)%7)
     delta = delta_raw == 0 ? ( n.hour < 18 ? 0 : 7) : delta_raw
     (Time.now + delta*60*60*24).strftime "%Y/%m/%d (%a)" + 
-      " @ K306" # Next monday and default location
+      " @ K304" # Next monday and default location
   else
     conf
   end
