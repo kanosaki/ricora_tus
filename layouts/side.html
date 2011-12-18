@@ -26,7 +26,7 @@
     </div>
   <% end %>
 </div>
-<h4>Recent Updates</h4>
+<h4><a href="<%= @config[:update_log] %>">Recent Updates</a></h4>
 <div class="updates">
   <% vcs_logs.each do |body, meta| %>
     <div class="updates-entry">
