@@ -1,29 +1,33 @@
 <h4>Articles</h4>
 <div class="articles">
-  <% sorted_articles[0, 10].each do |article| %>
-    <div class="articles-entry">
-      <%= link_to(article[:title], article.path) %>
-      <span class="meta">(<%= article[:created_at] %>)</span>
-    </div>
+  <% if sorted_articles.empty? %>
+    <i>現在記事はありません</i>
+  <% else %>
+    <% sorted_articles[0, 10].each do |article| %>
+      <div class="articles-entry">
+        <%= link_to(article[:title], article.path) %>
+        <span class="meta">(<%= article[:created_at] %>)</span>
+      </div>
+    <% end %>
   <% end %>
 </div>
 <div id="quote">
   <h4>Notifications</h4>
-  <% sitenews.each do |n| %>
-    <div class="news">
-      <div class="news-header">
-        <div class="news-title">
-          <h5><%= n["title"] %>
-            <span class="news-timestamp">
-              <%= n["timestamp"].strftime("%Y-%m-%d") %>
-            </span>
-          </h5>
+  <% if sitenews.empty? %>
+    <i>現在ニュースはありません</i>
+  <% else %>
+    <% sitenews.each do |n| %>
+      <div class="news">
+        <div class="news-header">
+          <div class="news-title">
+            <h5><%= n["title"] %><span class="news-timestamp"><%= n["timestamp"].strftime("%Y-%m-%d") %></span></h5>
+          </div>
+        </div>
+        <div class="news-body">
+          <p><%= n["body"] %></p>
         </div>
       </div>
-      <div class="news-body">
-        <p><%= n["body"] %></p>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 <h4><a href="<%= @config[:update_log] %>">Recent Updates</a></h4>
