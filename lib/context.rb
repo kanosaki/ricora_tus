@@ -31,3 +31,7 @@ def vcs_logs
   cmd = "git log -n5 --date=short --pretty=format:\"#{format}\""
   `#{cmd}`.split("\n").map{|s| s.split("|||") }
 end
+
+def sitemap_data
+  xml_sitemap(:items => @items.select{|i| i[:extension] == "html" })
+end
