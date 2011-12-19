@@ -1,26 +1,20 @@
-- name  : Home
+- name  : ホーム
   url   : index.html
   tip   : Ricora Language Team top page
 
-- name  : About
+- name  : 紹介
   url   : about.html
   tip   : About this circle and site
   sub   :
-    - name  : Circle
-      url   : about.html
-      tip   : About this circle 
-    - name  : Site
-      url   : webproject.html
-      tip   : About this site
 
-- name  : For Visitors
+- name  : 新入生へ 
   url   : for-visitors.html
   tip   : For visitors.
 
-- name  : For Members
+- name  : 内部向け
   url   : for-members.html
   tip   : For members.
 
-- name  : Contact us
+- name  : 連絡
   url   : contact.html
   tip   : Why don't you join us!
