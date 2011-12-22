@@ -35,7 +35,7 @@ class RsyncDeploy < Nanoc3::CLI::Command
   end
 
   def deploy_command
-    "rsync -avz -e ssh \"./#{output_root}/\" \"#{target}\""
+    "rsync -avzP -e ssh \"./#{output_root}/\" \"#{target}\""
   end
 
   def output_root

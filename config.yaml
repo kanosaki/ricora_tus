@@ -3,7 +3,7 @@ deploy:
     dst: "ricora@nodat000.ed.noda.tus.ac.jp:~/www/lang"
 
 base_url: "http://www.ed.noda.tus.ac.jp/ricora/lang"
-next_meeting: "default"
+next_meeting: "来年1月最初の週に一度新歓について会議をします"
 update_log: "https://github.com/kanosaki/ricora_tus/commits/master"
 blog:
   skelton_dir: "sitedata/blog_template"
