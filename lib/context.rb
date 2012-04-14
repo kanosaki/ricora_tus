@@ -17,10 +17,10 @@ def next_meeting
   conf = @config[:next_meeting]
   if conf == "default"
     n = Time.now
-    delta_raw = ((8 - n.wday)%7)
+    delta_raw = ((9 - n.wday)%7)
     delta = delta_raw == 0 ? ( n.hour < 18 ? 0 : 7) : delta_raw
     (Time.now + delta*60*60*24).strftime "%Y/%m/%d (%a)" + 
-      " @ K304" # Next monday and default location
+      " @ K306" # Next monday and default location
   else
     conf
   end
