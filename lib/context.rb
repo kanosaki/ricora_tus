@@ -26,6 +26,10 @@ def next_meeting
   end
 end
 
+def admin_repository_url
+  @config[:admin_repository_url]
+end
+
 def vcs_logs
   format = "%s ||| by %an, %ad" 
   cmd = "git log -n5 --date=short --pretty=format:\"#{format}\""
