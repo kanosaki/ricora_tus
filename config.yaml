@@ -3,7 +3,7 @@ deploy:
     dst: "ricora@nodat000.ed.noda.tus.ac.jp:~/www/lang"
 
 base_url: "http://www.ed.noda.tus.ac.jp/ricora/lang"
-next_meeting: "6/12(火) @ K304 18:10~"
+next_meeting: "default"
 update_log: "https://github.com/kanosaki/ricora_tus/commits/master"
 admin_repository_url: "https://github.com/kanosaki/ricora_tus"
 blog:
