@@ -1,9 +1,9 @@
 deploy:
   default:
-    dst: "ricora@nodat000.ed.noda.tus.ac.jp:~/www/lang"
+    dst: "ricora@tusedt000.ed.tus.ac.jp:~/www/lang"
 
 base_url: "http://www.ed.noda.tus.ac.jp/ricora/lang"
-next_meeting: "default"
+next_meeting: "N/A"
 update_log: "https://github.com/kanosaki/ricora_tus/commits/master"
 admin_repository_url: "https://github.com/kanosaki/ricora_tus"
 blog:
